@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]]; then
+    echo 'An argument must be specified' 2>/dev/null
+    exit
+fi
+
+title="${2:-$1}"
+found=`wmctrl -lx | grep "$title"`
+
+if [[ -n "$found" ]]; then
+    echo 'switching'
+    `wmctrl -a "$title"`
+    exit
+fi
+
+echo 'starting'
+$1 &
