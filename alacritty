@@ -1,4 +1,0 @@
-#!/bin/sh
-/usr/bin/alacritty &
-sleep 0.2
-wmctrl -r Alacritty -b add,maximized_vert,maximized_horz
